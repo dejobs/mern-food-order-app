@@ -1,14 +1,13 @@
 import express, {Request, Response} from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import "dotenv/config";
 
-/*mongoose
+mongoose
   .connect(process.env.MONGO as string)
   .then(() => console.log("connceted live to mongodb sever😃"))
-  .catch((err) => console.log(err.message));*/
+  .catch((err) => console.log(err.message));
 
 const app = express();
 
