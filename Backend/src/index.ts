@@ -3,6 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import "dotenv/config";
+import userRouter from "./routes/user.route";
 
 mongoose
   .connect(process.env.MONGO as string)
@@ -16,9 +17,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({extended: true}));
 app.use(cors());
 
-app.get("/test", async (req: Request, res: Response) => {
-  res.json({message: "hello there"});
-});
+app.use("/api/user", userRouter);
 
 app.listen(7500, () => {
   console.log("app is listenng at port 7500!!!");
